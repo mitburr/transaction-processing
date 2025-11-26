@@ -1,0 +1,15 @@
+node_modules
+dist
+.git
+.env
+.env.example
+*.log
+logs/
+.gitignore
+README.md
+CLAUDE.md
+GOOGLE_SHEETS_SETUP.md
+homelab_deployment_guide.md
+.vscode
+.idea
+*.md

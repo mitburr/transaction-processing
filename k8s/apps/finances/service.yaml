@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: finances
+  namespace: default
+spec:
+  selector:
+    app: finances
+  ports:
+  - port: 80
+    targetPort: 3000
+  type: ClusterIP

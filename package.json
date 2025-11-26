@@ -1,0 +1,51 @@
+{
+  "name": "transaction-processing",
+  "version": "1.0.0",
+  "description": "Automated bank transaction import and categorization system",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/main.ts",
+    "start": "node dist/main.js",
+    "watch": "tsc --watch",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest",
+    "plaid:link": "ts-node src/scripts/plaid-link.ts",
+    "plaid:link:production": "ts-node src/scripts/link-production-bank.ts",
+    "plaid:sandbox": "ts-node src/scripts/create-sandbox-token.ts",
+    "plaid:test": "ts-node src/scripts/test-plaid-transactions.ts",
+    "plaid:inspect": "ts-node src/scripts/inspect-transaction-data.ts",
+    "plaid:accounts": "ts-node src/scripts/list-accounts.ts",
+    "test:filtering": "ts-node src/scripts/test-filtering.ts",
+    "categorize:preview": "ts-node src/scripts/preview-categorization.ts",
+    "categorize:ui": "ts-node src/web/categorizer-ui.ts",
+    "sync": "ts-node src/main.ts",
+    "sync:history": "ts-node src/scripts/import-historical.ts"
+  },
+  "keywords": [
+    "plaid",
+    "banking",
+    "automation",
+    "transactions"
+  ],
+  "author": "em",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "^3.3.1",
+    "dotenv": "^16.4.5",
+    "google-auth-library": "^10.5.0",
+    "google-spreadsheet": "^4.1.2",
+    "plaid": "^26.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.19",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

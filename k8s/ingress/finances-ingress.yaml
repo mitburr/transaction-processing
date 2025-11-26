@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: finances-http
+  namespace: default
+spec:
+  entryPoints:
+    - web  # Port 80
+  routes:
+  - match: Host(`finances.grove`)
+    kind: Rule
+    services:
+    - name: finances
+      port: 80

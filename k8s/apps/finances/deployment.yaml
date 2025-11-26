@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finances
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: finances
+  template:
+    metadata:
+      labels:
+        app: finances
+    spec:
+      containers:
+      - name: finances
+        image: finances-categorizer:latest
+        imagePullPolicy: Never  # Use local image
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - secretRef:
+            name: finances-env
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
